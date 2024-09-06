@@ -22,7 +22,7 @@ export default function Column({
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
-        <div className={styles.label}>{label}</div>
+        <div className={styles.label}>Column: {label}</div>
         <TrButton
           additionalClassName={styles.settingColumnBtn}
           onClick={() => setIsSettingColumnOpen(true)}
@@ -32,7 +32,7 @@ export default function Column({
       </div>
 
       {cards.map((card) => (
-        <Card key={card.id} label={card.label} />
+        <Card key={card.id} card={card} columnId={columnId} />
       ))}
 
       {cards.length === 0 && <div className={styles.noCards}>No cards have been created yet</div>}

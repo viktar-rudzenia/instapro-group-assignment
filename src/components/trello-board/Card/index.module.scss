@@ -1,6 +1,26 @@
 .wrapper {
-  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 8px;
   border-radius: 5px;
   border: 1px solid gray;
-  background: #76767a;
+}
+
+.moveCardBtn {
+  padding: 5px;
+  background: #4040cdb0;
+}
+
+.removeCardBtn {
+  padding: 5px;
+  background: red;
+}
+
+.moveCardListWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,9 +1,11 @@
-function App() {
+import TrelloBoard from 'components/trello-board/TrelloBoard';
+
+function HomePage() {
   return (
-    <div>
-      Trello assignment init
-    </div>
+    <main>
+      <TrelloBoard />
+    </main>
   );
 }
 
-export default App;
+export default HomePage;

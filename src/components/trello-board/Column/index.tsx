@@ -30,11 +30,15 @@ export default function Column({
           ...
         </TrButton>
       </div>
+
       {cards.map((card) => (
         <Card key={card.id} label={card.label} />
       ))}
+
+      {cards.length === 0 && <div className={styles.noCards}>No cards have been created yet</div>}
+
       <TrButton disabled={isCreateCardOpen} onClick={() => setIsCreateCardOpen(true)}>
-        Add a card
+        Add new card
       </TrButton>
       {isCreateCardOpen && (
         <CreateCard columnId={columnId} setIsCreateCardOpen={setIsCreateCardOpen} />

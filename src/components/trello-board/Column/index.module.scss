@@ -1,3 +1,5 @@
+@import 'src/styles/functions.scss';
+
 .wrapper {
   border: 1px solid gray;
   border-radius: 5px;
@@ -26,4 +28,13 @@
   bottom: 10px;
   left: 10px;
   background: lightgray;
+}
+
+.noCards {
+  font-size: rem(20px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }

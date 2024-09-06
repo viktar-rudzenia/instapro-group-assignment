@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
 import { TrButton } from 'src/components/shared';
+import { CardInterface } from 'src/interfaces';
 import CreateCard from '../CreateCard';
+import Card from '../Card';
 
 import styles from './index.module.scss';
-import { CardInterface } from 'src/interfaces';
 
 export default function Column({
   label,
@@ -30,7 +31,7 @@ export default function Column({
         </TrButton>
       </div>
       {cards.map((card) => (
-        <div>{card.label}</div>
+        <Card key={card.id} label={card.label} />
       ))}
       <TrButton disabled={isCreateCardOpen} onClick={() => setIsCreateCardOpen(true)}>
         Add a card

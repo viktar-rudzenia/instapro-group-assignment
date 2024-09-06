@@ -2,7 +2,10 @@
   border: 1px solid gray;
   padding: 5px;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .closeButton {

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { TrButton } from 'components/shared';
+import { TrButton } from 'src/components/shared';
 import CreateColumn from '../CreateColumn';
 
 import styles from './index.module.scss';

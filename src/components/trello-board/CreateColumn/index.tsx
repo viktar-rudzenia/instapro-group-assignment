@@ -1,4 +1,7 @@
-import { TrButton } from 'components/shared';
+import { useContext, useState } from 'react';
+
+import { TrButton } from 'src/components/shared';
+import TrelloBoardContext from 'src/store/TrelloBoardContext';
 
 import styles from './index.module.scss';
 
@@ -7,10 +10,25 @@ export default function CreateColumn({
 }: {
   setIsColumnFormOpen: (value: boolean) => void;
 }) {
+  const [newColumnLabel, setNewColumnLabel] = useState('');
+  const { columns, setColumns } = useContext(TrelloBoardContext);
+
+  const handleColumnSubmit = () => {
+    setColumns([
+      ...columns,
+      {
+        id: Date.now(),
+        label: newColumnLabel,
+        cards: [],
+      },
+    ]);
+    setIsColumnFormOpen(false);
+  };
+
   return (
     <div className={styles.wrapper}>
-      <input />
-      <TrButton onClick={() => setIsColumnFormOpen(false)}>Add List</TrButton>
+      <input value={newColumnLabel} onChange={(e) => setNewColumnLabel(e.target.value)} />
+      <TrButton onClick={handleColumnSubmit}>Add List</TrButton>
       <TrButton additionalClassName={styles.closeButton} onClick={() => setIsColumnFormOpen(false)}>
         X
       </TrButton>

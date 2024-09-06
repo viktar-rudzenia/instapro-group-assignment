@@ -1,5 +1,5 @@
-import { TrelloBoard } from 'components/trello-board';
-import { ContentWrapper, Footer, Header } from 'components/layout';
+import { TrelloBoard } from 'src/components/trello-board';
+import { ContentWrapper, Footer, Header } from 'src/components/layout';
 
 import styles from './index.module.scss';
 

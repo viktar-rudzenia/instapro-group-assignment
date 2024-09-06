@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { TrButton } from 'src/components/shared';
+import TrelloBoardContext from 'src/store/TrelloBoardContext';
 import { CardInterface } from 'src/interfaces';
 import CreateCard from '../CreateCard';
 import Card from '../Card';
@@ -16,18 +17,19 @@ export default function Column({
   columnId: number;
   cards: CardInterface[];
 }) {
-  const [iseSettingColumnOpen, setIsSettingColumnOpen] = useState(false);
   const [isCreateCardOpen, setIsCreateCardOpen] = useState(false);
+  const { columns, setColumns } = useContext(TrelloBoardContext);
+
+  const handleRemoveColumn = () => {
+    setColumns(columns.filter((column) => column.id !== columnId));
+  };
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
         <div className={styles.label}>Column: {label}</div>
-        <TrButton
-          additionalClassName={styles.settingColumnBtn}
-          onClick={() => setIsSettingColumnOpen(true)}
-        >
-          ...
+        <TrButton additionalClassName={styles.settingColumnBtn} onClick={handleRemoveColumn}>
+          X
         </TrButton>
       </div>
 

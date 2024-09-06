@@ -27,8 +27,11 @@ export default function CreateColumn({
 
   return (
     <div className={styles.wrapper}>
+      <span>Label:</span>
       <input value={newColumnLabel} onChange={(e) => setNewColumnLabel(e.target.value)} />
-      <TrButton onClick={handleColumnSubmit}>Add List</TrButton>
+      <TrButton disabled={!newColumnLabel.length} onClick={handleColumnSubmit}>
+        Add Column
+      </TrButton>
       <TrButton additionalClassName={styles.closeButton} onClick={() => setIsColumnFormOpen(false)}>
         X
       </TrButton>

@@ -11,7 +11,7 @@ export default function ActionPanel() {
   return (
     <div className={styles.wrapper}>
       <TrButton disabled={isColumnFormOpen} onClick={() => setIsColumnFormOpen(true)}>
-        Create new List
+        Create new Column
       </TrButton>
       {isColumnFormOpen && <CreateColumn setIsColumnFormOpen={setIsColumnFormOpen} />}
     </div>

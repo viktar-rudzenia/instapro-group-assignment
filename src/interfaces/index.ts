@@ -1,7 +1,6 @@
 export interface CardInterface {
   id: number;
   label: string;
-  columnId: string;
 }
 
 export interface ColumnInterface {

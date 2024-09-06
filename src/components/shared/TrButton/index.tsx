@@ -7,11 +7,22 @@ interface RmButtonProps {
   onClick?: () => void;
   children?: ReactNode;
   additionalClassName?: string;
+  disabled?: boolean;
 }
 
-export default function TrButton({ children, onClick, additionalClassName }: RmButtonProps) {
+export default function TrButton({
+  children,
+  onClick,
+  additionalClassName,
+  disabled,
+}: RmButtonProps) {
   return (
-    <button type="button" className={cn(styles.button, additionalClassName)} onClick={onClick}>
+    <button
+      type="button"
+      className={cn(styles.button, additionalClassName)}
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

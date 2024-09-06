@@ -21,4 +21,18 @@
   &:active {
     transform: translate(0, 2px);
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    transition: none;
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 0.4;
+    }
+
+    &:active {
+      transform: none;
+    }
+  }
 }
